@@ -1,0 +1,22 @@
+[project]
+name = "bigdata-demo"
+version = "0.1.0"
+description = "BigData analysis demo for MBA students - pandas vs DuckDB"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pandas>=2.0.0",
+    "duckdb>=0.9.0",
+    "numpy>=1.24.0",
+    "faker>=20.0.0",
+    "psutil>=5.9.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "requests>=2.31.0",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "jupyter>=1.0.0",
+    "ipykernel>=6.25.0",
+]
