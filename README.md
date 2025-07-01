@@ -81,27 +81,9 @@ All datasets are hosted on Google Cloud Storage with public access:
 - **Medium**: https://storage.googleapis.com/bigdata2025/duckdb/medium_dataset.csv (10M records)  
 - **Large**: https://storage.googleapis.com/bigdata2025/duckdb/large_dataset.csv (100M records)
 
-## Troubleshooting GCP Access
-
-If you encounter 403 Forbidden errors, your GCP bucket needs public read permissions:
-
-```bash
-# Make bucket publicly readable
-gsutil iam ch allUsers:objectViewer gs://bigdata2025
-
-# Or make specific files public  
-gsutil acl ch -u AllUsers:R gs://bigdata2025/duckdb/*
-```
-
-Use the diagnostic script to verify access:
-```bash
-uv run python diagnose_gcp.py
-```
 
 ## Files Description
 
-- `diagnose_gcp.py` - Tests GCP bucket access and provides troubleshooting info
-- `generate_datasets.py` - Creates synthetic temperature measurement datasets (for reference)
 - `pandas_demo.py` - Demonstrates pandas performance and limitations  
 - `duckdb_demo.py` - Shows DuckDB's efficient processing capabilities
 - `comparison_demo.py` - Direct side-by-side performance comparison
@@ -118,7 +100,7 @@ Medium                  4.23s          0.18s           1.8 GB          8.3 MB
 Large                   FAILED         1.45s           OUT OF MEMORY   12.7 MB
 ```
 
-## Teaching Points for MBA Students
+## Key Points 
 
 1. **Technology Selection Impact**: Choice of tools significantly affects scalability and costs
 2. **Resource Planning**: Understanding memory requirements prevents production failures  
